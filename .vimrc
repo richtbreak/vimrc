@@ -13,13 +13,14 @@ call plug#begin('~/.vim/plugged')
     " Defaults everyone can agree on.
     Plug 'tpope/vim-sensible'
 
-    " Fuzzy find for multiple things.
-    "Plug 'kien/ctrlp.vim'
-
-    " The replacement for minibufexpl
+    " Possible replacements for minibufexpl
     Plug 'bling/vim-bufferline'
+    "Plug 'bling/vim-airline'  " Too garish, methinks.
     " The latest minibufexpl
     "Plug 'techlivezheng/vim-plugin-minibufexpl'
+
+    " A different buffer choooser. Replacing NERDTree perhaps?
+    Plug 'jeetsukumaran/vim-buffergator'
 
     " Actually use the undo tree.
     Plug 'mbbill/undotree',         { 'on': 'UndotreeToggle'   }
@@ -72,7 +73,7 @@ call plug#begin('~/.vim/plugged')
     " Easily search for, substitute, and abbreviate multiple variants of a word.
     Plug 'tpope/vim-abolish'
     " Rethinking VIM as a tool for writing.
-    Plug 'reedes/vim-pencil'
+    "Plug 'reedes/vim-pencil'
     " }}}
 
     " Edit enhancements  --- {{{
@@ -89,6 +90,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-unimpaired'
     " Smart selection of the nearest text object.
     Plug 'gcmt/wildfire.vim'
+    " :NR Isolate a narrow region of the currrent file in a scratch buffer. 
+    Plug 'chrisbra/NrrwRgn'
+    " <C-w>o toggles a window/pane to full screen and back again.
+    Plug 'vim-scripts/ZoomWin'
+    " <Leader>ws toggles visibility of whitespace.
+    Plug 'chrisbra/vim-show-whitespace'
     " Change single line to multi line, and back.
     Plug 'AndrewRadev/splitjoin.vim'
     " Switch predefined segments of text with defined replacements.
@@ -99,7 +106,7 @@ call plug#begin('~/.vim/plugged')
     " =========
     " The ultimate snippet solution for vim.
     "Plug 'SirVer/ultisnips'
-    
+   
     " cdargs-like in vim
     Plug 'vim-scripts/cdargs'
 
@@ -188,12 +195,12 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" vim-pencil coinfiguration
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd call pencil#init()
-  autocmd FileType text         call pencil#init()
-augroup END
+"" vim-pencil configuration
+"augroup pencil
+"  autocmd!
+"  autocmd FileType markdown,mkd call pencil#init()
+"  autocmd FileType text         call pencil#init()
+"augroup END
 
 " }}}
 
